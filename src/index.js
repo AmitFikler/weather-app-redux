@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { weatherReducer } from './reducers/rootReducer';
+import thunkMiddleWare from 'redux-thunk';
 import App from './App';
-// import { store } from './app/store';
-// import { Provider } from 'react-redux';
+import './index.css';
+
+const store = createStore(weatherReducer, applyMiddleware(thunkMiddleWare));
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider> */}
-    <App />
-    {/* </Provider> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// key = 72fc7e8580f42b1efd5d67050e86042e
+// key = 4ed2c0ce9deb99e4edf43650a237724e
+
 // formula C = K -  273.15
