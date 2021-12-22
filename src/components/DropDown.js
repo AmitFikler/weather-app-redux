@@ -14,10 +14,8 @@ const DropDown = () => {
           `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=72fc7e8580f42b1efd5d67050e86042e`
         )
         .then((response) => {
-          let date = new Date(response.data.dt * 1000);
           const weatherObj = {
             name: response.data.name,
-            date: date.toUTCString(),
             temp: Math.floor(response.data.main.temp - 273.15),
             main: response.data.weather[0].main,
             icon: response.data.weather[0].icon,
@@ -35,23 +33,25 @@ const DropDown = () => {
     };
   };
   return (
-    <div>
+    <div className="search-div">
       <input
+        className="input-city"
         type="text"
         list="data"
         onChange={(e) => setCountry(e.target.value)}
       />
-      <datalist id="data">
+      <datalist id="data" style={{ width: '50%' }}>
         {cities.map((item) => (
-          <option key={item} value={item} />
+          <option style={{ width: '50%' }} key={item} value={item} />
         ))}
       </datalist>
       <button
+        className="searchBtn material-icons"
         onClick={() => {
           dispatch(getWeather(country));
         }}
       >
-        submit
+        search
       </button>
     </div>
   );

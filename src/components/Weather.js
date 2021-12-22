@@ -6,23 +6,24 @@ const Weather = () => {
     if (weather.name) {
       return (
         <div>
-          <h1>
-            {weather.name}
-            {'  '}
+          <div className="weather-div">
+            <h3>
+              {weather.name}
+              {'  '}
+              <img
+                src={`https://flagcdn.com/28x21/${weather.country.toLowerCase()}.png`}
+                alt={weather.country}
+              />
+            </h3>
+            <h1 className="temp">{weather.temp}°C</h1>
+            <p>feels like {weather.feels_like}°C</p>
             <img
-              src={`https://flagcdn.com/28x21/${weather.country.toLowerCase()}.png`}
-              alt={weather.country}
+              alt="weather-icon"
+              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
             />
-          </h1>
-          <h3>{weather.temp}°C</h3>
-          <p>feels like {weather.feels_like}°C</p>
-          <p>{weather.date}</p>
-          <img
-            alt="weather-icon"
-            src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-          />
-          <br />
-          <i>{weather.main}</i>
+            <br />
+            <i>{weather.main}</i>
+          </div>
         </div>
       );
     } else {

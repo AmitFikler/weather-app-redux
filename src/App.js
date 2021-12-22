@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <h1>weather app</h1>
+      <h1>iWeather</h1>
       <DropDown />
       <Weather />
     </div>
