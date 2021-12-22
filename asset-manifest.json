@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/weather-app-redux/static/css/main.9da69273.css",
+    "main.js": "/weather-app-redux/static/js/main.947622db.js",
+    "index.html": "/weather-app-redux/index.html",
+    "main.9da69273.css.map": "/weather-app-redux/static/css/main.9da69273.css.map",
+    "main.947622db.js.map": "/weather-app-redux/static/js/main.947622db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9da69273.css",
+    "static/js/main.947622db.js"
+  ]
+}
